@@ -20,7 +20,9 @@ const PORT = process.env.PORT || 3000;
 //moddlewares
 const corsOptions = {
     origin:[
-        process.env.CLIENT_URL || "http://localhost:5173"
+        "http://localhost:5173",
+        "https://foodapp-client-6dfq.vercel.app",
+        process.env.CLIENT_URL!
     ],
     credentials:true,
 } 

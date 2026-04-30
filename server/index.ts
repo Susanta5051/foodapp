@@ -20,9 +20,9 @@ const PORT = process.env.PORT || 3000;
 //moddlewares
 const corsOptions = {
     origin:[
-        "http://localhost:5173"
-        process.env.CLIENT_URL, 
-    ],
+        "http://localhost:5173",
+        process.env.CLIENT_URL
+    ]
     credentials:true,
 } 
 

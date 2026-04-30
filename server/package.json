@@ -6,7 +6,7 @@
   
   "scripts": {
     "dev": "nodemon index.ts",
-    "build": "npm install && npm start ",
+    "build": "npm install ",
     "start": "node index.ts"
   },
   "dependencies": {

@@ -18,12 +18,13 @@ import VerifyEmail from './auth/VerifyEmail'
 import { useUserStore } from './store/useUserStore'
 import MainLayout from './pages/MainLayout'
 import { useEffect } from 'react'
-import Loading from './pages/Loading'
+// import Loading from './pages/Loading'
 import EditProduct from './pages/resturant/pages/EditProduct'
 import AddProduct from './pages/resturant/pages/AddProduct'
 import EditResturantProfile from './pages/resturant/auth/EditResturant'
 import ResturantRegister from './pages/resturant/auth/CreateResturant'
 import Resturant from './pages/resturant/pages/ResturantHome'
+// import { Verified } from 'lucide-react'
 
  const ProtectedRoutes = ({children} : {children:React.ReactNode})=>{
     const {isAuthenticated ,user} = useUserStore();
@@ -145,14 +146,14 @@ import Resturant from './pages/resturant/pages/ResturantHome'
 
 function App() {
     
-  const {checkAuthentication, isCheckingAuth} = useUserStore();
+  const {checkAuthentication ,user} = useUserStore();
 
   useEffect(()=>{
     checkAuthentication()
   },[])
-  if(isCheckingAuth){
-    return <Loading/>
-  }
+  useEffect(()=>{
+    console.log("Verified:", user?.isVerified)
+  },[user])
   return (
     <UserContext >
       

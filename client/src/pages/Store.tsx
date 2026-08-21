@@ -102,7 +102,7 @@ const Store = () => {
       }`}
     >
       <div className="flex ">
-        <div className="sm:basis-1/3 md:basis-1/5 p-5 ">
+        <div className=" p-5 ">
           <div>
             Location:
             <Input
@@ -129,7 +129,7 @@ const Store = () => {
             </ul>
           </div>
         </div>
-        <div>
+        <div className="w-[90%]">
           <div>
             <div>
               <SearchBox
@@ -139,7 +139,7 @@ const Store = () => {
               />
             </div>
           </div>
-          <div>
+          <div className="flex  flex-wrap justify-around overflow-x-auto">
             {stores.map((s, index) => (
               <StoreCard
                 key={index}

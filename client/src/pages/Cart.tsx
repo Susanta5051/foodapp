@@ -68,7 +68,7 @@ const Cart = () => {
 
   useEffect(() => {
     console.log("user changed");
-    console.dir(user)
+    console.log(user)
     if (user) {
       const cartItems = user.cart.map((item) => ({ quantity:item.quantity,
         _id: item.menu._id,

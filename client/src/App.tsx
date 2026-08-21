@@ -105,10 +105,7 @@ import Resturant from './pages/resturant/pages/ResturantHome'
       path:'/change-password',
       element:<ChangePassword/>
     },
-    {
-      path:'/verify-email',
-      element:< VerifyEmail/>
-    },
+    
    {
     path:'/resturant',
     element:<MainLayout/>,

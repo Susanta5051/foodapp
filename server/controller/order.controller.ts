@@ -36,6 +36,7 @@ dotenv.config()
  export const getOrders = async (req:Request , res:Response)=>{
     try{
         const orders = await Order.find({user:req.id}).populate('user').populate('resturant')
+        console.log(orders)
         return res.status(200).json({
             success:true,
             message:"Intenal server error"

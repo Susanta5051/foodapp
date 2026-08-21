@@ -69,12 +69,15 @@ export const register= async (req :Request, res :Response)=>{
             address,
             verificationToken,
             verificationTokenExpireAt:Date.now()+24*60*60*1000,
-            cart:[]
+            cart:[],
+            isVerified:true
         })
-         generateToken(res,user);
-        await sendVerificationEmail(email, verificationToken)
+        //  generateToken(res,user);
+        // await sendVerificationEmail(email, verificationToken)
 
         const userf = await User.findOne({email}).select("-password");
+        if(userf)
+        generateToken(res,userf)
         return res.status(201).json({
             success:true,
             message:"Account created successfully",
@@ -115,7 +118,7 @@ export const login = async (req:Request , res : Response)=>{
         user.lastLogin = new Date();
         await user.save();
 
-        let userf = await User.findOne({email}).select("-password");
+        let userf = await User.findOne({email}).select("-password").populate("cart.menu");
         if (!userf){
             throw new Error()
             return
@@ -246,7 +249,7 @@ export const resetPassword = async (req: Request, res: Response) => {
 export const checkAuth = async (req :Request , res :Response)=>{
     try{
         const userId = req.id;
-        const user = await User.findById(userId).select("-password");
+        const user = await User.findById(userId).select("-password").populate("cart.menu");
         if(!user){
             return res.status(404).json({
                 success:false,

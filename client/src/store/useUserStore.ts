@@ -130,7 +130,7 @@ export const useUserStore = create<UserState>()(persist((set)=>({
 
     checkAuthentication: async()=>{
         try{
-            set({loading:true, isCheckingAuth:true});
+            set({ isCheckingAuth:true});
             // setTimeout(()=>{
             //     console.log("checking auth")
             // },5000)

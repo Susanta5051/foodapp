@@ -12,7 +12,7 @@ const StoreCard = (store : {name:string;location:string;image:string;storeId:str
     console.log("store id ",store.storeId)
   return (
     <div className="relative p-2 max-w-70 ">
-        <div className='relative'><div className='absolute right-2 bg-amber-600 rounded-lg w-10 text-center top-2 rotate-30'>{store.category}</div></div>
+        <div className='relative'><div className='absolute left-2 rounded-lg bg-orange-500 px-1 text-center top-2 '>{store.category}</div></div>
       <div className={`flex flex-col p-5  max-w-70  rounded-3xl border-4 border-orange-950 ${modeDay? "bg-amber-100 text-black":"bg-black text-white"}`}>
         <div className=''>
             {store.image ?<img src={store.image}></img>:<img src={resturant}></img>}

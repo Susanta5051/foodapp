@@ -38,14 +38,15 @@ const Products = () => {
   if (context === undefined) return;
   const { modeDay } = context;
   const categories = [
-    "VEG",
-    "NONVEG",
-    "BIRIYANI",
-    "MAINCOURSE",
-    "THALI",
-    "STARTER",
-    "DESERT",
-    "DRINKS",
+    "Tatar",
+    "Malaysian",
+    "Chinese",
+    "Yamal",
+    "Native American",
+    "Egyptian",
+    "Indian",
+    "Berber",
+    "German"
   ];
 
   const handleSubmit = async () => {
@@ -101,9 +102,8 @@ const Products = () => {
 
   if (filter.size > 0) {
     filtered = filtered.filter((item) => {
-      const category = JSON.parse(item.category[0]); // your current structure
-      return Array.from(filter).every((f) =>
-        category.includes(f)
+      return Array.from(filter).some((f) =>
+        item.category.includes(f)
       );
     });
   }

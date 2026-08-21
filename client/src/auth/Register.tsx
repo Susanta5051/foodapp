@@ -81,7 +81,7 @@ export const Register =() => {
         }
         try{
             let response = await register(formDataToSend);
-            if(response)navigate('/verify-email')
+            if(response)navigate('/')
         }
         catch(error){
             console.log(error)

@@ -139,7 +139,7 @@ const Store = () => {
               />
             </div>
           </div>
-          <div className="flex  flex-wrap justify-around overflow-x-auto">
+          <div className="flex  flex-wrap justify-around overflow-x-auto max-h-screen">
             {stores.map((s, index) => (
               <StoreCard
                 key={index}

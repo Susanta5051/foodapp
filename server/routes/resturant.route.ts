@@ -11,6 +11,6 @@ router.route('/update').put(isAuthenticated,upload.single('file'), updateRestura
 router.route('/order').get(isAuthenticated, getResturantOrder);
 router.route('/order/:orderId/status').put(isAuthenticated, updateStatus);
 router.route('/search').get( searchResturant);
-router.route('/:storeId').get(isAuthenticated,getSingleResturant);
+router.route('/details/:storeId').get(getSingleResturant);
 
 export default router

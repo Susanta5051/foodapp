@@ -122,7 +122,7 @@ export const useResturantStore = create<ResturantStore>()(persist((set)=>({
     getStoreDetails: async (storeId: string) => {
         try {
             set({ loading: true });
-            const response = await axios.get(`${API_END_POINT}/${storeId}`);
+            const response = await axios.get(`${API_END_POINT}/details/${storeId}`);
 
 
             if (response.data.success) {

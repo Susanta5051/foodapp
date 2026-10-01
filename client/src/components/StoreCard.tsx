@@ -9,7 +9,6 @@ const StoreCard = (store : {name:string;location:string;image:string;storeId:str
     const context = useContext(BrowserContext)
     if(context === undefined)return
     const {modeDay} =context
-    console.log("store id ",store.storeId)
   return (
     <div className="relative p-2 max-w-70 ">
         <div className='relative'><div className='absolute left-2 rounded-lg bg-orange-500 px-1 text-center top-2 '>{store.category}</div></div>

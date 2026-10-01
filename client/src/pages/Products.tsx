@@ -38,16 +38,7 @@ const Products = () => {
   if (context === undefined) return;
   const { modeDay } = context;
   const categories = [
-    "Tatar",
-    "Malaysian",
-    "Chinese",
-    "Yamal",
-    "Native American",
-    "Egyptian",
-    "Indian",
-    "Berber",
-    "German"
-  ];
+    "Cypriot","Armenian","Malaysian","Indian","Argentine","South Indian","Portuguese","Sindhi","Tatar","Hyderabad", "Belarusian","Ainu","American","Assyrian","Berber", "British","Bulgarian","Cantonese" ];
 
   const handleSubmit = async () => {
     setSearchValue(searchValue.trim());
@@ -169,7 +160,7 @@ const Products = () => {
             ))}
           </div>
         </div>
-        <div className="overflow-scroll flex flex-col items-center max-h-200 basis-4/5 overscroll-auto">
+        <div className="overflow-scroll flex flex-col items-center max-h-screen basis-4/5 overscroll-auto">
           <div>
             <div className="relative sm:hidden top-14 ">
               <button type="button" onClick={() => setShow(!show)}>
@@ -199,7 +190,7 @@ const Products = () => {
                 />
               </div>
             ))}
-            {productData.length === 0 && (
+            {filteredData.length === 0 && (
               <div>
                 <p className="font-bold text-2xl">No Result Found</p>
                 <p>

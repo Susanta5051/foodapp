@@ -48,9 +48,6 @@ type ResturantStore = {
     getStoreDetails: (storeId:string)=>Promise<void>
 }
 
-
-
-
 export const useResturantStore = create<ResturantStore>()(persist((set)=>({
     loading:false,
     resturant:null,

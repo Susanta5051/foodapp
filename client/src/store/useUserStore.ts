@@ -263,9 +263,7 @@ export const useUserStore = create<UserState>()(persist((set)=>({
         }catch(error){
             set({loading:false})
         }
-    }
-
-     
+    }    
 
 }),{
     name:'user-name',
